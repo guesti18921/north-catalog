@@ -1,0 +1,136 @@
+[
+  {
+    "id": 1,
+    "slug": "forma-k65",
+    "name": "Forma K65",
+    "subtitle": "Для сосредоточенной работы каждый день",
+    "price": 8990,
+    "category": "Устройства",
+    "subcategory": "Клавиатуры",
+    "description": "Компактная механическая клавиатура с тактильными переключателями и тёплой подсветкой.",
+    "color": "Кремовый",
+    "imageAlt": "Кремовая механическая клавиатура Forma K65",
+    "image": "assets/forma-k65.jpg"
+  },
+  {
+    "id": 2,
+    "slug": "arc-m2",
+    "name": "Arc M2",
+    "subtitle": "Беспроводная мышь",
+    "price": 3490,
+    "category": "Устройства",
+    "description": "Эргономичная беспроводная мышь с тихими клавишами и подключением по Bluetooth.",
+    "color": "Графит",
+    "image": "assets/arc-m2.jpg"
+  },
+  {
+    "id": 3,
+    "slug": "terra-pad",
+    "name": "Terra Pad",
+    "subtitle": "Коврик для стола",
+    "price": 2190,
+    "category": "Аксессуары",
+    "description": "Плотный коврик для рабочей поверхности с мягкой фактурой и аккуратной строчкой.",
+    "color": "Песочный",
+    "image": "assets/terra-pad.jpg"
+  },
+  {
+    "id": 4,
+    "slug": "linea-l1",
+    "name": "Linea L1",
+    "subtitle": "Настольная лампа",
+    "price": 4890,
+    "category": "Устройства",
+    "description": "Поворотная настольная лампа из матового металла с направленным светом.",
+    "color": "Чёрный",
+    "image": "assets/linea-l1.jpg"
+  },
+  {
+    "id": 5,
+    "slug": "lift-s",
+    "name": "Lift S",
+    "subtitle": "Подставка для ноутбука",
+    "price": 3690,
+    "category": "Подставки",
+    "description": "Алюминиевая подставка для ноутбука, создающая удобный угол обзора.",
+    "color": "Серебристый",
+    "image": "assets/lift-s.jpg"
+  },
+  {
+    "id": 6,
+    "slug": "pivot-arm",
+    "name": "Pivot Arm",
+    "subtitle": "Кронштейн для монитора",
+    "price": 7990,
+    "category": "Подставки",
+    "description": "Регулируемый настольный кронштейн для монитора с креплением к столешнице.",
+    "color": "Чёрный",
+    "image": "assets/pivot-arm.jpg"
+  },
+  {
+    "id": 7,
+    "slug": "rest-one",
+    "name": "Rest One",
+    "subtitle": "Подставка для наушников",
+    "price": 2790,
+    "category": "Подставки",
+    "description": "Минималистичная подставка для полноразмерных наушников с устойчивым основанием.",
+    "color": "Графит",
+    "image": "assets/rest-one.jpg"
+  },
+  {
+    "id": 8,
+    "slug": "link-six",
+    "name": "Link 6",
+    "subtitle": "USB-C хаб",
+    "price": 4490,
+    "category": "Устройства",
+    "description": "Компактный адаптер с портами USB, HDMI и USB-C для повседневной работы.",
+    "color": "Серебристый",
+    "image": "assets/link-six.jpg"
+  },
+  {
+    "id": 9,
+    "slug": "flow-bottle",
+    "name": "Flow Bottle",
+    "subtitle": "Бутылка из стали",
+    "price": 1990,
+    "category": "Аксессуары",
+    "description": "Стальная термобутылка для воды и напитков в лаконичном корпусе.",
+    "color": "Стальной",
+    "image": "assets/flow-bottle.jpg"
+  },
+  {
+    "id": 10,
+    "slug": "note-a5",
+    "name": "Note A5",
+    "subtitle": "Блокнот для заметок",
+    "price": 990,
+    "category": "Аксессуары",
+    "description": "Блокнот формата A5 с плотной бумагой и эластичной лентой.",
+    "color": "Молочный",
+    "image": "assets/note-a5.jpg"
+  },
+  {
+    "id": 11,
+    "slug": "mono-pen-set",
+    "name": "Mono Pen Set",
+    "subtitle": "Набор ручек",
+    "price": 1290,
+    "category": "Аксессуары",
+    "description": "Набор из трёх ручек разной толщины для письма и быстрых эскизов.",
+    "color": "Чёрный",
+    "image": "assets/mono-pen-set.jpg"
+  },
+  {
+    "id": 12,
+    "slug": "cable-kit",
+    "name": "Cable Kit",
+    "subtitle": "Органайзеры для кабелей",
+    "price": 790,
+    "category": "Аксессуары",
+    "description": "Три силиконовых фиксатора для аккуратного хранения кабелей.",
+    "color": "Чёрный",
+    "image": "assets/cable-kit.jpg"
+  }
+]

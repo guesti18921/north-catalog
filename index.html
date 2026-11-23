@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#28362D">
+  <meta name="description" content="NORTH — устройства, подставки и аксессуары для рабочего пространства.">
+  <title>NORTH. — Каталог</title>
+  <link rel="icon" href="./assets/favicon.png">
+  <link rel="stylesheet" href="./src/styles.css">
+  <script type="module" src="./src/main.mjs"></script>
+</head>
+<body>
+  <a class="skip-link" href="#catalog">К каталогу</a>
+  <div class="announcement">
+    <span>Бесплатная доставка от 7 000 ₽</span>
+    <span aria-hidden="true">·</span>
+    <span>Собирай своё пространство</span>
+  </div>
+  <header class="site-header" id="top">
+    <div class="container header-layout">
+      <button class="icon-button mobile-menu" type="button" aria-label="Открыть меню" aria-haspopup="dialog" data-open="menu-dialog">
+        <span class="icon icon-menu" aria-hidden="true"></span>
+      </button>
+      <a class="wordmark" href="#top" data-catalog aria-label="NORTH — каталог"><img src="./assets/north-wordmark.png" alt="NORTH." width="98" height="22"></a>
+      <nav class="desktop-nav" aria-label="Основное меню">
+        <a href="#catalog" aria-current="page" data-catalog>Каталог</a>
+        <span>О бренде</span>
+        <span>Доставка и оплата</span>
+      </nav>
+      <div class="header-actions">
+        <button class="header-favorites" type="button" data-favorites aria-pressed="false">
+          <span class="icon icon-heart" aria-hidden="true"></span>Избранное
+        </button>
+        <span class="header-profile"><span class="icon icon-circle" aria-hidden="true"></span>Профиль</span>
+        <span class="cart" role="status" aria-label="Корзина, 0 товаров">
+          <span class="icon icon-bag" aria-hidden="true"></span>
+          <span aria-hidden="true"><span class="cart-label">Корзина (</span><span id="cart-count">0</span><span class="cart-label">)</span></span>
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="intro" aria-labelledby="page-title">
+      <nav class="breadcrumbs" aria-label="Хлебные крошки">
+        <a href="#top" data-catalog>Главная</a><span aria-hidden="true">/</span><span aria-current="page">Каталог</span>
+      </nav>
+      <p class="collection">Коллекция / 2026</p>
+      <div class="intro-content">
+        <h1 id="page-title">Место для <em>идей.</em><br>Вещи для работы.</h1>
+        <p>Продуманные детали для рабочего пространства. Меньше визуального шума — больше внимания к главному.</p>
+      </div>
+    </section>
+
+    <section class="catalog" id="catalog" aria-labelledby="catalog-title">
+      <aside class="desktop-filters" id="desktop-filters" aria-label="Фильтры каталога">
+        <h2>Фильтры</h2>
+        <div id="filter-controls">
+          <details class="filter-group category-filter" open>
+            <summary>Категории</summary>
+            <fieldset class="filter-options">
+              <legend class="sr-only">Категория</legend>
+              <div id="sidebar-categories"></div>
+            </fieldset>
+          </details>
+          <details class="filter-group price-filter" open>
+            <summary>Цена</summary>
+            <fieldset>
+              <legend class="sr-only">Диапазон цены</legend>
+              <div class="price-slider" id="price-slider">
+                <div class="slider-track" aria-hidden="true"></div>
+                <input type="range" id="price-min" min="0" max="10000" value="0" aria-label="Минимальная цена" aria-valuetext="0 ₽">
+                <input type="range" id="price-max" min="0" max="10000" value="10000" aria-label="Максимальная цена" aria-valuetext="10 000 ₽">
+              </div>
+              <div class="price-values" aria-hidden="true"><span id="price-from">0 ₽</span><span id="price-to">10 000 ₽</span></div>
+            </fieldset>
+          </details>
+          <button class="outline-button reset-button" type="button" data-reset>Сбросить фильтры</button>
+        </div>
+      </aside>
+      <div class="catalog-results">
+        <div class="toolbar">
+          <div class="result-summary" role="status">
+            <h2 id="catalog-title" tabindex="-1">Все товары</h2>
+            <span id="result-count"></span>
+          </div>
+          <label class="search-box">
+            <span class="icon icon-search" aria-hidden="true"></span>
+            <span class="sr-only">Поиск по каталогу</span>
+            <input id="search" type="search" placeholder="Поиск по каталогу" autocomplete="off">
+          </label>
+          <label class="sort-box">
+            <span class="sr-only">Сортировка</span>
+            <select id="sort">
+              <option value="popular">По популярности</option>
+              <option value="price-asc">Сначала дешевле</option>
+              <option value="price-desc">Сначала дороже</option>
+              <option value="alphabetical">По названию А–Я</option>
+            </select>
+            <span class="icon icon-chevron" aria-hidden="true"></span>
+          </label>
+          <button class="outline-button mobile-filter-button" type="button" aria-haspopup="dialog" data-open="filters-dialog">
+            <span class="icon icon-filters" aria-hidden="true"></span>Фильтры
+          </button>
+          <fieldset class="category-chips">
+            <legend class="sr-only">Категория товара</legend>
+            <div id="mobile-categories"></div>
+          </fieldset>
+        </div>
+        <div class="product-grid" id="product-grid"></div>
+        <div class="empty-state" id="empty-state" hidden>
+          <h3 id="empty-title">Товары не найдены</h3>
+          <p id="empty-message">Измените условия поиска или сбросьте фильтры.</p>
+          <button class="outline-button" type="button" id="empty-action" data-reset>Сбросить фильтры</button>
+        </div>
+        <noscript><p>Включите JavaScript, чтобы открыть каталог.</p></noscript>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-layout">
+      <strong>NORTH. — Объекты для рабочего пространства</strong>
+      <span>© 2026 NORTH. Все права на учебный бренд условные.</span>
+    </div>
+  </footer>
+
+  <dialog class="dialog product-dialog" id="product-dialog" aria-labelledby="detail-title">
+    <div class="detail-layout">
+      <button class="icon-button close-button" type="button" aria-label="Закрыть карточку товара" data-close autofocus>
+        <span class="icon icon-close" aria-hidden="true"></span>
+      </button>
+      <div class="detail-image"><img id="detail-image" width="362" height="362" alt=""></div>
+      <div class="detail-content">
+        <p class="detail-category" id="detail-category"></p>
+        <h2 id="detail-title"></h2>
+        <p class="detail-subtitle" id="detail-subtitle"></p>
+        <p class="detail-price" id="detail-price"></p>
+        <p class="detail-description" id="detail-description"></p>
+        <p class="detail-color"><strong>Цвет:</strong> <span id="detail-color"></span></p>
+        <button class="primary-button" id="add-to-cart" type="button"></button>
+        <span class="sr-only" role="status" id="cart-announcement"></span>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog class="dialog filters-dialog" id="filters-dialog" aria-labelledby="filters-title">
+    <div class="simple-panel">
+      <button class="icon-button close-button" type="button" aria-label="Закрыть фильтры" data-close autofocus>
+        <span class="icon icon-close" aria-hidden="true"></span>
+      </button>
+      <h2 id="filters-title">Фильтры</h2>
+      <div id="mobile-filter-panel"></div>
+      <button class="primary-button" type="button" data-close>Показать товары</button>
+    </div>
+  </dialog>
+
+  <dialog class="dialog menu-dialog" id="menu-dialog" aria-labelledby="menu-title">
+    <div class="simple-panel">
+      <button class="icon-button close-button" type="button" aria-label="Закрыть меню" data-close autofocus>
+        <span class="icon icon-close" aria-hidden="true"></span>
+      </button>
+      <h2 id="menu-title">Меню</h2>
+      <nav class="mobile-navigation" aria-label="Основное меню">
+        <a href="#catalog" data-catalog>Каталог</a>
+        <button type="button" data-favorites aria-pressed="false">Избранное</button>
+        <span>О бренде</span>
+        <span>Доставка и оплата</span>
+        <span>Профиль</span>
+      </nav>
+    </div>
+  </dialog>
+
+  <template id="product-template">
+    <article class="product-card">
+      <button class="product-open" type="button" aria-haspopup="dialog">
+        <img class="product-image" width="362" height="362" alt="" decoding="async">
+        <span class="product-meta">
+          <span class="product-category"></span>
+          <span class="product-name"></span>
+          <span class="product-price"></span>
+          <span class="product-subtitle"></span>
+        </span>
+      </button>
+      <button class="favorite-button" type="button" aria-pressed="false">
+        <span class="icon icon-heart" aria-hidden="true"></span>
+      </button>
+    </article>
+  </template>
+</body>
+</html>
